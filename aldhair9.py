@@ -1,0 +1,1 @@
+print(prueba 6)
