@@ -1,6 +1,11 @@
-
 print("hola mundo")
-a=600
-b=177
-c=a+b
-print("Resultado suma: ", c)
+a=50
+b=25
+r=a+b
+print(" suma: ", r)
+r=a-b 
+print("resta:",r)
+r=a*b
+print("multipllicacion:",r)
+r=a/b
+print("division:",r)
