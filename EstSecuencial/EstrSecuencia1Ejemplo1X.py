@@ -18,5 +18,5 @@ if __name__ == '__main__':
 	# Proceso  
 	pc = (n1+n2+n3+n4)/4
 	# Datos de Salida  
-	print("La calificación Promedio de notas es:",pc)
+	print("La calificaciÃ³n Promedio de notas es:",pc)
 

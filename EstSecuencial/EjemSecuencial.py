@@ -9,4 +9,14 @@ def calcularPromedioNota():
   #Datos de Salida
   print("La calificación de nota promedio es:",PC)
 
-calcularPromedioNota()
+def calcularServicoPintado():
+    #Datos de entrada
+    cantM2=float(input("Ingrese la cantidad de M2 a pintar:"))
+    costM2=float(input("Ingrese el costo de pintado por M2:"))
+    #proceso
+    montCost=cantM2*costM2
+    #Datos de Salida
+    print("El monto total a cobrar es:", montCost)
+
+#calcularPromedioNota()
+calcularServicoPintado()
