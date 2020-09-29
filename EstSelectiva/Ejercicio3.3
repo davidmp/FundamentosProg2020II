@@ -1,0 +1,18 @@
+Algoritmo CalcularPrecioLapiz
+	Definir cantidadL Como Entero
+	Definir costoPagar, costoL  Como Real
+	//Datos entrada
+	Escribir "Ingresa la cantidad de lapices a comprar:"
+	Leer cantidadL
+	
+	//Proceso 
+	si cantidadL>=1000 Entonces
+		costoL=0.85		
+		costoPagar=cantidadL*costoL
+	SiNo
+		costoL=0.9		
+		costoPagar=cantidadL*costoL
+	FinSi
+	//Datos de Salida
+	Escribir "El costo total a pagar es: ", costoPagar
+FinAlgoritmo
