@@ -1,0 +1,41 @@
+Algoritmo calcularCostoPolizaDMP
+	Definir tipoPlanP Como Caracter
+	Definir costobase, CostoPoliza Como Real
+	Definir alcohol, lentes, enfermedad Como Logico
+	Definir edad Como Entero
+	//Datos de Entrada
+	Escribir "Ingrese el Plan que desea el cliente:"
+	Leer tipoPlanP
+	Escribir "El cleinte consume alcohol?:"
+	Leer alcohol
+	Escribir "Usa lentes?:"
+	Leer lentes
+	Escribir "Tiene alguna enfermedad?:"
+	Leer enfermedad
+	Escribir "Que edad tiene?:"
+	Leer edad
+	//Procesos
+	si tipoPlanP="A" Entonces
+		costobase=1200		
+	Sino	
+		costobase=950		
+	FinSi
+	si alcohol==Verdadero Entonces
+		costobase=costobase+(costobase*0.10)
+	FinSi
+	si lentes==Verdadero Entonces
+		costobase=costobase+(costobase*0.05)
+	FinSi
+	si enfermedad==Verdadero Entonces
+		costobase=costobase+(costobase*0.05)
+	FinSi
+	si edad>40 Entonces
+		costobase=costobase+(costobase*0.20)
+	Sino	
+		costobase=costobase+(costobase*0.10)
+	FinSi
+	CostoPoliza=costobase
+	//Datos de Salidad
+	Escribir "Es costo de la poliza es:", CostoPoliza
+	
+FinAlgoritmo
