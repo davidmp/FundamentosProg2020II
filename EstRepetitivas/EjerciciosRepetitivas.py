@@ -20,5 +20,19 @@ def suma10NumerosFor():
     print(f"La suma de los 10 numeros ingresados es: {suma}")
 
 
+def suma10NumerosEmulateDoWhile():
+    #Definiendo variables e inicializando variables
+    nContadorCondicion,numero, suma=1,0,0
+    #Proceso y datos de entrada
+    while True:
+        numero=float(input(f"Ingrese el numero de la posicion  {nContadorCondicion} :"))
+        suma=suma+numero
+        nContadorCondicion=nContadorCondicion+1
+        if nContadorCondicion>10:
+            break
+    #Datos de salida
+    print(f"La suma de los 10 numeros ingresados es: {suma}")
+
 #suma10NumerosWhile()
-suma10NumerosFor()
+#suma10NumerosFor()
+suma10NumerosEmulateDoWhile()
