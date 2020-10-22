@@ -11,6 +11,7 @@ def calcularInversionFinAnho():
         interesMes=montoInvertir*interes
         montoInvertir=montoInvertir+interesMes
         contadorMes=contadorMes+1
+    #Datos de salida
     print(f"El monto de dinero que tiene al cabo de un anho es: {montoInvertir}")
     print("El monto de dinero que tiene al cabo de un anho es: ", montoInvertir)
 
