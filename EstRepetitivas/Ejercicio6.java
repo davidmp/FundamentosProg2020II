@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Ejercicio6 {
     static Scanner cs=new Scanner(System.in);
     static Random rnd= new Random();
+    
     static void calcularInversionFinAnho(){
         double interes=0.02, montoInvertir=0, interesMes=0;
         int contadorMes=0;

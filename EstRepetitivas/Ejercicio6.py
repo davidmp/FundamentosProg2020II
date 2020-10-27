@@ -1,5 +1,6 @@
 import random
 
+
 def calcularInversionFinAnho():
     interes=0.02
     contadorMes=0
