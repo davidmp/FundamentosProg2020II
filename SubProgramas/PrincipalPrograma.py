@@ -1,4 +1,5 @@
 from SubPrograma import SubProgramaFactorial
+
 class Principal():
     obj=SubProgramaFactorial() # objeto Global
     inicio=0 # variable Global
