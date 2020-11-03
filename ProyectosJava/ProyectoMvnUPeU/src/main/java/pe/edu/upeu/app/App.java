@@ -11,30 +11,40 @@ import pe.edu.upeu.utils.LeerTeclado;
 public class App{    
     static LeerTeclado lt=new LeerTeclado();//Obj Global
     static Factorial fac=new Factorial();//Obj Global
+    static FibonaciMain fib=new FibonaciMain();
 
     static void rangoFactorial(int numInit, int numFin){
         for(int inicio=numInit;inicio<=numFin;inicio++){
-            fac.calcularFactorialBig(inicio);
+            System.out.println("Factorial:"+inicio+" es:"+
+            fac.calcularFactorialRecur(inicio));
         }
     }
 
-    public static void main( String[] args ){
-        
-        String nombre=lt.leer("", "Ingrese su nombre:");
-        System.out.println("Nombre es:"+nombre);       
-        
-        int edad=lt.leer(0, "Ingrese su edad:");
-        System.out.println("Edad es:"+edad);
-        
-        String celular=lt.leer("", "Ingrese su num. celular:");
-        System.out.println("Celular es:"+celular); 
-        
-        String descripcion=lt.leer("", "Ingrese su descripcion:");   
-        System.out.println("Descripcion es:"+descripcion); 
+    static void rangoFactorialBig(int numInit, int numFin){
+        for(int inicio=numInit;inicio<=numFin;inicio++){
+            System.out.println("Factorial:"+inicio+" es:"+
+            fac.calcularFactorialBigRecur(inicio));
+        }
+    }
 
-        //rangoFactorial(10, 60);  
-        
-        
+    static void seriFibonaciRangoRecur(int numFin){
+        for(int inicio=0;inicio<=numFin;inicio++){
+            System.out.println("Factorial:"+inicio+" es:"+
+            fib.fibonaciRecur(inicio));
+        }        
+    }
 
+    static void seriFibonaciRango(int numFin){
+        for(int inicio=0;inicio<=numFin;inicio++){
+            System.out.println("Factorial:"+inicio+" es:"+
+            fib.fibonaci(inicio));
+        }        
+    }    
+
+//2.432.902.008.176.640.000
+    public static void main( String[] args ){        
+        //rangoFactorial(5, 20);  
+        //rangoFactorialBig(999, 1000);
+        seriFibonaciRango(46);
     }
 }
