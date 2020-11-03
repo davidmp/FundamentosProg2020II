@@ -15,28 +15,28 @@ public class App{
 
     static void rangoFactorial(int numInit, int numFin){
         for(int inicio=numInit;inicio<=numFin;inicio++){
-            System.out.println("Factorial:"+inicio+" es:"+
+            System.out.println("Factorialx:"+inicio+" es:"+
             fac.calcularFactorialRecur(inicio));
         }
     }
 
     static void rangoFactorialBig(int numInit, int numFin){
         for(int inicio=numInit;inicio<=numFin;inicio++){
-            System.out.println("Factorial:"+inicio+" es:"+
+            System.out.println("Factorialy:"+inicio+" es:"+
             fac.calcularFactorialBigRecur(inicio));
         }
     }
 
     static void seriFibonaciRangoRecur(int numFin){
         for(int inicio=0;inicio<=numFin;inicio++){
-            System.out.println("Factorial:"+inicio+" es:"+
+            System.out.println("Fibonaci:"+inicio+" es:"+
             fib.fibonaciRecur(inicio));
         }        
     }
 
     static void seriFibonaciRango(int numFin){
         for(int inicio=0;inicio<=numFin;inicio++){
-            System.out.println("Factorial:"+inicio+" es:"+
+            System.out.println("Fibonaci:"+inicio+" es:"+
             fib.fibonaci(inicio));
         }        
     }    
@@ -45,6 +45,6 @@ public class App{
     public static void main( String[] args ){        
         //rangoFactorial(5, 20);  
         //rangoFactorialBig(999, 1000);
-        seriFibonaciRango(46);
+        seriFibonaciRango(100);
     }
 }
