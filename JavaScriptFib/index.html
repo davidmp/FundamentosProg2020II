@@ -17,15 +17,16 @@ var ctx = canvas.getContext("2d");
 var img = new Image();
 img.src = "conejo3.png";
 
-/*
+
 img.onload = function(){
 var cantidad = prompt("Ingrese cantidad de anhos:");
+var obj=new FibonaciMain();
 var result=0;
 var incx=0;
 var incy=0;
 for(i=1; i<=cantidad;i++){
-	//result=fibonaciConejo(i);
-	result=fibonacir(i);
+	result=obj.fibonaci(i);
+	//result=fibonacir(i);
 	console.log(result);
 	ctx.font = "bold 22px sans-serif";
 	for(j=1; j<=result;j++){
@@ -38,7 +39,7 @@ for(i=1; i<=cantidad;i++){
 	incx=0;
 	incy=incy+100;
 }
-}*/
+}
 
 
 </script>

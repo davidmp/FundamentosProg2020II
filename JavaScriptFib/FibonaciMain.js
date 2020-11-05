@@ -1,6 +1,6 @@
 class FibonaciMain {
     resultado=0;
-    
+
    fibonaciRecur(n){
         if(n<0){return -1;}
         if(n==0 ||n==1){return n;}else{
@@ -40,7 +40,7 @@ class FibonaciMain {
 
 }
 
-var obj=new FibonaciMain();
+/*var obj=new FibonaciMain();
 var dato=prompt("Ingrese el numero", 6);
 console.log(obj.fibonaciBig(dato));
-document.write(obj.fibonaciBig(dato))
+document.write(obj.fibonaciBig(dato))*/
