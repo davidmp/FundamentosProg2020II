@@ -37,7 +37,7 @@ public class App{
     static void seriFibonaciRango(int numFin){
         for(int inicio=0;inicio<=numFin;inicio++){
             System.out.println("Fibonaci:"+inicio+" es:"+
-            fib.fibonaci(inicio));
+            fib.fibonaciBig(inicio));
         }        
     }    
 
@@ -45,6 +45,6 @@ public class App{
     public static void main( String[] args ){        
         //rangoFactorial(5, 20);  
         //rangoFactorialBig(999, 1000);
-        seriFibonaciRango(100);
+        seriFibonaciRango(1000);
     }
 }
