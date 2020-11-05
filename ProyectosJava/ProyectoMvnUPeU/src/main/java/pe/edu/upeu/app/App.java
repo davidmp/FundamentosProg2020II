@@ -9,7 +9,7 @@ import pe.edu.upeu.utils.LeerTeclado;
  *
  */
 public class App{    
-    static LeerTeclado lt=new LeerTeclado();//Obj Global
+    static LeerTeclado leer=new LeerTeclado();//Obj Global
     static Factorial fac=new Factorial();//Obj Global
     static FibonaciMain fib=new FibonaciMain();
 
@@ -45,6 +45,6 @@ public class App{
     public static void main( String[] args ){        
         //rangoFactorial(5, 20);  
         //rangoFactorialBig(999, 1000);
-        seriFibonaciRango(1000);
+        seriFibonaciRango(leer.leer(0, "Ingrese un numero:"));
     }
 }
