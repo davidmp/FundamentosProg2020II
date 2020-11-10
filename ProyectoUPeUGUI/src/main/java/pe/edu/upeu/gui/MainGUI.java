@@ -2,6 +2,7 @@ package pe.edu.upeu.gui;
 
 
 import pe.edu.upeu.core.FibonaciMain;
+import pe.edu.upeu.core.Reportes;
 import pe.edu.upeu.utils.UtilsX;
 import java.awt.event.*;
 import javax.swing.*;
@@ -36,7 +37,7 @@ public class MainGUI extends JFrame implements ActionListener{
         m11 = new JMenuItem("Listar");
         m22 = new JMenuItem("Guardar como");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(new Dimension(screenSize.width, screenSize.height-36));
         mb.add(m1);
         mb.add(m2);
@@ -58,7 +59,7 @@ public class MainGUI extends JFrame implements ActionListener{
         this.setVisible(true);        
     }
 
-    public void pintarConejos(Graphics g){
+    public void pintarConejos(final Graphics g){
         int fibo=0;
         int incx=0;
         int incy=0;
@@ -73,17 +74,17 @@ public class MainGUI extends JFrame implements ActionListener{
         }
     }
 
-    public void panelDibujoImagen(Container contai){
+    public void panelDibujoImagen(final Container contai){
         numeros=Integer.parseInt(texto.getText());
         try {
         image=ImageIO.read(obj.getFile("imagen/conejo3.png"));
-        } catch (Exception ex) {
+        } catch (final Exception ex) {
         System.out.println(ex.getMessage());
         }
         panel = new JPanel(){
         private static final long serialVersionUID = 1L;
         @Override
-        protected void paintComponent(Graphics g) {
+        protected void paintComponent(final Graphics g) {
         super.paintComponent(g);
         pintarConejos(g);
         }
@@ -101,13 +102,30 @@ public class MainGUI extends JFrame implements ActionListener{
         contai.repaint();
         }
 
+    public void panelTabla(final Container contai){
+        contai.setBackground(new Color(0,0,255));
+        final Reportes obj3=new Reportes();        
+        String[] columnas=new String[] {"ID", "Producto", "Cantidad", "Precio", "Marca"};
+        table = new JTable(obj3.reporteDatos(), columnas);
+        scrollPane = new JScrollPane(table);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.invalidate();
+        scrollPane.validate();
+        scrollPane.repaint();
+        contai.add(BorderLayout.CENTER, scrollPane);
+        contai.invalidate();
+        contai.validate();
+        contai.repaint();
+        }
+
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        Container contai=this.getContentPane();
+    public void actionPerformed(final ActionEvent e) {
+        final Container contai=this.getContentPane();
         contai.remove(scrollPane);
         if(e.getSource()==m11){
-        //panelTabla(contai);
+        panelTabla(contai);
         }
         if(e.getSource()==send){
         panelDibujoImagen(contai);
