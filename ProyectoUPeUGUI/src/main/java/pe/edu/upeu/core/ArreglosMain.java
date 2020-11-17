@@ -12,6 +12,11 @@ public class ArreglosMain{
             System.out.println("posicion["+indice+"]="+vector[indice]);
         }
     }
+
+    public void otroEjercicio(){
+        
+    }
+
     
     public int[] calcular100PNumCuadrados(){
         int[] resultados=new int[100];
