@@ -30,7 +30,8 @@ public class App{
             "1=Algoritmo Fibonci Normal \n"+
             "2=Finonaci Entorno Escritorio \n"+
             "3=Imprimir Productos \n"+
-            "4=Concepto Vectores \n";
+            "4=Concepto Vectores \n"+
+            "5=Vector de numeros al Cuadrado \n";
 
             numeroAlgoritmo=teclado.leer(0, datos);
             switch(numeroAlgoritmo){
@@ -38,6 +39,7 @@ public class App{
                 case 2: new MainGUI();break;
                 case 3: rep.imprimirMatriz(rep.reporteDatos());break;
                 case 4: armain.introduccionVector();break;
+                case 5: armain.imprimirVector(armain.calcular100PNumCuadrados());break;
                 default : System.out.println("La opción que selecciono no existe"); 
             }
             opcion=teclado.leer(' ', "Desea probar otras opciones? SI=S, NO=N");

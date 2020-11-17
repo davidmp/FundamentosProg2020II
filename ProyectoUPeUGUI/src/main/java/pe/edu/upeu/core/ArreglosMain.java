@@ -4,14 +4,22 @@ public class ArreglosMain{
 
     public  void imprimirVector(Object[] vector){
         for(int indice=0; indice<vector.length;indice++){
-            System.out.println("frutas["+indice+"]="+vector[indice]);
+            System.out.println("posicion["+indice+"]="+vector[indice]);
         }
     }
     public  void imprimirVector(int[] vector){
         for(int indice=0; indice<vector.length;indice++){
-            System.out.println("frutas["+indice+"]="+vector[indice]);
+            System.out.println("posicion["+indice+"]="+vector[indice]);
         }
-    }    
+    }
+    
+    public int[] calcular100PNumCuadrados(){
+        int[] resultados=new int[100];
+        for(int indice=0;indice<resultados.length; indice++){
+            resultados[indice]=(indice+1)*(indice+1);
+        }
+        return resultados;
+    }
 
 
 
