@@ -2,6 +2,7 @@ package pe.edu.upeu.app;
 
 import java.io.Console;
 
+import pe.edu.upeu.core.ArreglosMain;
 import pe.edu.upeu.core.FibonaciMain;
 import pe.edu.upeu.core.Reportes;
 import pe.edu.upeu.gui.MainGUI;
@@ -17,6 +18,7 @@ public class App{
     static Console cons=System.console();
     static FibonaciMain fib=new FibonaciMain();
     static Reportes rep=new Reportes();
+    static ArreglosMain armain=new ArreglosMain();
 
     static void menuOpciones(){
         System.out.println( "*********************Bienvenidos al Sistema********************" );
@@ -27,13 +29,15 @@ public class App{
             String datos="Seleccion la opción que desea:\n"+
             "1=Algoritmo Fibonci Normal \n"+
             "2=Finonaci Entorno Escritorio \n"+
-            "3=Imprimir Productos \n";
+            "3=Imprimir Productos \n"+
+            "4=Concepto Vectores \n";
 
             numeroAlgoritmo=teclado.leer(0, datos);
             switch(numeroAlgoritmo){
                 case 1: System.out.println(fib.fibonaci(4));;break;
                 case 2: new MainGUI();break;
                 case 3: rep.imprimirMatriz(rep.reporteDatos());break;
+                case 4: armain.introduccionVector();break;
                 default : System.out.println("La opción que selecciono no existe"); 
             }
             opcion=teclado.leer(' ', "Desea probar otras opciones? SI=S, NO=N");
