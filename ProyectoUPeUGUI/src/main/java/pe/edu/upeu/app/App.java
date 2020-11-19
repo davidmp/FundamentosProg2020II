@@ -31,7 +31,9 @@ public class App{
             "2=Finonaci Entorno Escritorio \n"+
             "3=Imprimir Productos \n"+
             "4=Concepto Vectores \n"+
-            "5=Vector de numeros al Cuadrado \n";
+            "5=Vector de numeros al Cuadrado \n"+
+            "6=Introduccion Matrices \n"+
+            "7=Imprimir Productos \n";
 
             numeroAlgoritmo=teclado.leer(0, datos);
             switch(numeroAlgoritmo){
@@ -40,6 +42,8 @@ public class App{
                 case 3: rep.imprimirMatriz(rep.reporteDatos());break;
                 case 4: armain.introduccionVector();break;
                 case 5: armain.imprimirVector(armain.calcular100PNumCuadrados());break;
+                case 6: armain.introduccionMatrices();break;
+                case 7: armain.imprimirMatriz(armain.llenadoMatriz());break;
                 default : System.out.println("La opción que selecciono no existe"); 
             }
             opcion=teclado.leer(' ', "Desea probar otras opciones? SI=S, NO=N");
