@@ -50,4 +50,45 @@ public class ArreglosMain{
     }
 
 
+    public static void imprimirMatriz(Object[][] matriz){
+        for(int filaSubInd=0; filaSubInd<matriz.length;filaSubInd++){
+            for(int columSubInd=0; columSubInd<matriz[0].length;columSubInd++){
+                System.out.print(matriz[filaSubInd][columSubInd]+"\t");
+            }
+            System.out.println();
+        }
+    }
+    public static  void imprimirMatriz(int[][] matriz){
+        for(int filaSubInd=0; filaSubInd<matriz.length;filaSubInd++){
+            for(int columSubInd=0; columSubInd<matriz[0].length;columSubInd++){
+                System.out.print(matriz[filaSubInd][columSubInd]+"\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void introduccionMatrices(){
+
+        int[][] M;
+        M=new int[4][3];
+        M[2][0]=5;
+        System.out.println(M[2][0]);
+
+        int matrizX[][] =new int[][]{
+            {5,6,2},
+            {5,6,2},
+            {5,6,2},
+            {5,6,2}
+        };
+        System.out.println("Imprimiendo Matriz");
+        imprimirMatriz(matrizX);
+
+    }
+
+
+    public static void main(String[] args) {
+        introduccionMatrices();
+    }    
+
+
 }
