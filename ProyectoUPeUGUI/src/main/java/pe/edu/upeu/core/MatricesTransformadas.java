@@ -48,17 +48,61 @@ public int[][] transformada03(int dimen, int numInit){
                 }else{
                 item=numInit+(fila+columna)*(fila+columna+1)/2 + fila; 
                 matriz[fila][columna]=item;
-                }
-            
+                }            
             }
         }
     }
     return matriz;
 }
 
+public int[][] transformada04(int dimen, int numInit){
+    int[][] matriz=new int[dimen][dimen];
+    int item=0;
+    for(int fila=0; fila<dimen;fila++){
+        for(int columna=0; columna<dimen;columna++){
+            if(columna<dimen-fila){                            
+                                
+                if((fila+columna)%2==0){
+                item=numInit+(fila+columna)*(fila+columna+1)/2 + fila; 
+                matriz[fila][columna]=item;
+                }
+                else{
+                item=numInit+(fila+columna)*(fila+columna+1)/2 + columna; 
+                matriz[fila][columna]=item;
+                }                 
+                
+            }
+        }
+    }
+    return matriz;
+}
+
+
+public int[][] transformada05(int dimen, int numInit){
+    int[][] matriz=new int[dimen][dimen];
+    int contador=0;
+    for(int fila=0; fila<matriz.length;fila++){
+        for(int columna=matriz[0].length-1; columna>=0;columna--){
+            if(contador<=fila){                            
+                matriz[fila][columna]= numInit;                                                                
+                numInit++;
+                contador++;
+            }else{
+               matriz[fila][columna]=-1; 
+            }
+        }
+        contador=0;
+    }
+    return matriz;
+}
+
+
+
+
+
 public static void main(String[] args) {
    MatricesTransformadas mt=new MatricesTransformadas(); 
-   mt.ia.imprimirMatriz(mt.transformada03(5, 0));
+   mt.ia.imprimirMatriz(mt.transformada05(10, 1));
 }
 
     
