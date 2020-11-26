@@ -1,12 +1,17 @@
 package pe.edu.upeu.app;
 
 import java.io.Console;
+import java.util.ArrayList;
+import java.util.List;
 
 import pe.edu.upeu.core.ArreglosMain;
 import pe.edu.upeu.core.FibonaciMain;
 import pe.edu.upeu.core.Reportes;
+import pe.edu.upeu.dao.ProductosDao;
 import pe.edu.upeu.gui.MainGUI;
+import pe.edu.upeu.utils.LeerArchivo;
 import pe.edu.upeu.utils.LeerTeclado;
+import pe.edu.upeu.utils.UtilsX;
 
 /**
  * Hello world!
@@ -18,7 +23,24 @@ public class App{
     static Console cons=System.console();
     static FibonaciMain fib=new FibonaciMain();
     static Reportes rep=new Reportes();
-    static ArreglosMain armain=new ArreglosMain();
+    static ArreglosMain armain=new ArreglosMain();    
+
+    static public void crearArchivo(String nombre){
+           LeerArchivo la=new LeerArchivo(nombre);
+            try {
+                List list = new ArrayList<String>();
+                list.add("P001	Papa	Kilos	2.5	30");
+                list.add("P002	Manazana	Kilos	3	48");
+                la.escribir(list);    
+                
+                List listaLectura=la.leer();
+                System.out.println("Contenido de Productos");
+                System.out.println(listaLectura);
+                
+            } catch (Exception e) {
+                System.out.println("Error al escribir registros");
+            }
+    }
 
     static void menuOpciones(){
         System.out.println( "*********************Bienvenidos al Sistema********************" );
@@ -33,8 +55,10 @@ public class App{
             "4=Concepto Vectores \n"+
             "5=Vector de numeros al Cuadrado \n"+
             "6=Introduccion Matrices \n"+
-            "7=Imprimir Productos \n";
-
+            "7=Imprimir Productos \n"+
+            "8=Crear Archivo Contenido \n"+
+            "9=Agregar Producto \n";
+            ProductosDao daoProd;
             numeroAlgoritmo=teclado.leer(0, datos);
             switch(numeroAlgoritmo){
                 case 1: System.out.println(fib.fibonaci(4));;break;
@@ -44,6 +68,12 @@ public class App{
                 case 5: armain.imprimirVector(armain.calcular100PNumCuadrados());break;
                 case 6: armain.introduccionMatrices();break;
                 case 7: armain.imprimirMatriz(armain.llenadoMatriz());break;
+                case 8: crearArchivo(teclado.leer("file.txt", "Ingrese el nombe del archivo que desea crear"));break;
+                case 9: { 
+                    daoProd=new ProductosDao();
+                    daoProd.agregarProducto();
+                    daoProd.reportarProductos();
+                }break;
                 default : System.out.println("La opción que selecciono no existe"); 
             }
             opcion=teclado.leer(' ', "Desea probar otras opciones? SI=S, NO=N");
@@ -66,6 +96,8 @@ public class App{
 
 
     public static void main( String[] args ){        
+        UtilsX util=new UtilsX();
+        util.clearConsole();
         System.out.println("-----Ingrese su usuario y clave para acceder al Sistema---");
         login();
 
