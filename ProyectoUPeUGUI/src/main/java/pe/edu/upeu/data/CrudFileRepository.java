@@ -8,7 +8,19 @@ import pe.edu.upeu.utils.LeerArchivo;
 
 public class CrudFileRepository{
 
- 
+    
+    public String generarId(LeerArchivo la, int numColum, String prefijo, int iniPrefNex){
+        int idX=1;
+        Object[][] data=listarContenido(la);
+        if(data!=null){        
+            idX=Integer.parseInt(data[data.length-1][numColum].toString()
+            .substring(iniPrefNex))+1;
+            return prefijo+""+idX;  
+        }else{
+            return prefijo+""+idX;
+        }
+    }
+
     public int numColumna(LeerArchivo aq, Object modelo){
         Field[] fields = (modelo).getClass().getDeclaredFields();
         int numColum=0;

@@ -13,10 +13,13 @@ UtilsX util=new UtilsX();
 LeerArchivo leerArc;
 Productos productos;
 
+
+
+
 public Object[][] agregarProducto(){
     leerArc=new LeerArchivo("Productos.txt");
     productos=new Productos();
-    productos.setiDProducto(leerTecla.leer("P000", "Ingrese el Id del Producto:"));
+    productos.setiDProducto(generarId(leerArc, 0, "P", 1));
     productos.setNombreProducto(leerTecla.leer("", "Ingrese el nombre del Producto:"));
     productos.setUnidadMedida(leerTecla.leer("", "Ingrese la unidad de medida:"));
     productos.setPrecio(leerTecla.leer(0.0, "Ingrese el unitario del Producto:"));

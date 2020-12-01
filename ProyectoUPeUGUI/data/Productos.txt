@@ -1,2 +1,2 @@
-P001	Papa	Kilos	2.5	30.0
-P002	Manzana	Kilos	3.0	25.0
+P1	Papa	Kilos	2.5	30.0
+P2	Manzana	Kilos	3.0	25.0
