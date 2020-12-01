@@ -24,7 +24,7 @@ public class App{
     static FibonaciMain fib=new FibonaciMain();
     static Reportes rep=new Reportes();
     static ArreglosMain armain=new ArreglosMain();    
-
+    static UtilsX util=new UtilsX();
     static public void crearArchivo(String nombre){
            LeerArchivo la=new LeerArchivo(nombre);
             try {
@@ -57,7 +57,9 @@ public class App{
             "6=Introduccion Matrices \n"+
             "7=Imprimir Productos \n"+
             "8=Crear Archivo Contenido \n"+
-            "9=Agregar Producto \n";
+            "9=Agregar Producto \n"+
+            "10=Eliminar Producto \n"+
+            "11=Modificar Registro de Productos \n";
             ProductosDao daoProd;
             numeroAlgoritmo=teclado.leer(0, datos);
             switch(numeroAlgoritmo){
@@ -74,6 +76,19 @@ public class App{
                     daoProd.agregarProducto();
                     daoProd.reportarProductos();
                 }break;
+                case 10: { 
+                    daoProd=new ProductosDao();                    
+                    daoProd.reportarProductos();
+                    daoProd.eliminarProducto(
+                        teclado.leer("","Ingrese el Id del Producto a Eliminar"));
+                    daoProd.reportarProductos();
+                }break;      
+                case 11: { 
+                    daoProd=new ProductosDao();
+                    daoProd.modificarProducto();
+                    util.clearConsole();
+                    daoProd.reportarProductos();
+                }break;                            
                 default : System.out.println("La opción que selecciono no existe"); 
             }
             opcion=teclado.leer(' ', "Desea probar otras opciones? SI=S, NO=N");
@@ -96,7 +111,7 @@ public class App{
 
 
     public static void main( String[] args ){        
-        UtilsX util=new UtilsX();
+        
         util.clearConsole();
         System.out.println("-----Ingrese su usuario y clave para acceder al Sistema---");
         login();

@@ -34,6 +34,22 @@ public void reportarProductos(){
     imprimirLista(listarContenido(leerArc));
 }
 
+public Object[][] eliminarProducto(String idDato){
+    leerArc=new LeerArchivo("Productos.txt");
+    return eliminarRegistros(leerArc, 0, idDato);     
+}
+
+public Object[][] modificarProducto(){
+    leerArc=new LeerArchivo("Productos.txt");
+    imprimirLista(listarContenido(leerArc));
+    System.out.println("**************Modificar Producto************");
+    String datoId=leerTecla.leer("", "Ingrese el Id del Producto a Modificar:");
+    Productos prod=new Productos();
+    prod.setNombreProducto(leerTecla.leer("","Ingrese el nuevo Nombre del Producto:"));
+    prod.setStock(leerTecla.leer(0.0, "Ingrese la nueva cantidad:"));    
+    return editarRegistro(leerArc, 0, datoId, prod);
+}
+
 
 
 }
