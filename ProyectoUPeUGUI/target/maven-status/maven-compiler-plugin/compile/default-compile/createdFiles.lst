@@ -1,0 +1,15 @@
+pe/edu/upeu/modelo/Productos.class
+pe/edu/upeu/app/App.class
+pe/edu/upeu/utils/LeerArchivo.class
+pe/edu/upeu/utils/LeerTeclado.class
+pe/edu/upeu/core/MatricesTransformadas.class
+pe/edu/upeu/data/CrudFileRepository.class
+pe/edu/upeu/gui/MainGUI$1.class
+pe/edu/upeu/core/Reportes.class
+pe/edu/upeu/utils/ImprimirArreglos.class
+pe/edu/upeu/core/ejercicio3.class
+pe/edu/upeu/utils/UtilsX.class
+pe/edu/upeu/gui/MainGUI.class
+pe/edu/upeu/core/ArreglosMain.class
+pe/edu/upeu/core/FibonaciMain.class
+pe/edu/upeu/dao/ProductosDao.class
