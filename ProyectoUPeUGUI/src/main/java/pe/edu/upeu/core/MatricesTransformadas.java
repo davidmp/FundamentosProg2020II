@@ -96,13 +96,50 @@ public int[][] transformada05(int dimen, int numInit){
     return matriz;
 }
 
+public int[][] transformada24(int dimen, int numInit){
+    int[][] matriz=new int[dimen][dimen];
+    int fila=0;
+    for(int columna=matriz[0].length-1; columna>=0;columna--){
+        if(fila!=-1){
+            for(fila=matriz.length-1; fila>=0;fila--){
+                matriz[fila][columna]=numInit;
+                numInit++;
+            }
+        }else{
+            for(fila=0; fila<matriz.length;fila++){
+                matriz[fila][columna]=numInit;
+                numInit++;
+            }            
+        }        
+    }
+    return matriz;
+}
+
+public int[][] transformada23(int dimen, int numInit){
+    int[][] matriz=new int[dimen][dimen];
+    int fila=0;
+    for(int columna=matriz[0].length-1; columna>=0;columna--){
+        if(fila!=5){
+            for(fila=0; fila<matriz.length;fila++){
+                matriz[fila][columna]=numInit;
+                numInit++;
+            }                        
+        }else{
+            for(fila=matriz.length-1; fila>=0;fila--){
+                matriz[fila][columna]=numInit;
+                numInit++;
+            }                      
+        }        
+    }
+    return matriz;
+}
 
 
 
 
 public static void main(String[] args) {
    MatricesTransformadas mt=new MatricesTransformadas(); 
-   mt.ia.imprimirMatriz(mt.transformada05(10, 1));
+   mt.ia.imprimirMatriz(mt.transformada23(5, 0));
 }
 
     
