@@ -159,10 +159,39 @@ public int[][] transformada35(int dimen, int numInit){
     return matriz;
 }
 
+public int[][] transformada29(int dimen, int numInit){
+    int[][] matriz=new int[dimen][dimen];
+    for(int v=0; v<dimen/2; v++){
+        for(int ls=v;ls<dimen-1-v; ls++){
+            matriz[v][ls]=numInit;
+            numInit++;            
+        }
+        for(int ld=v;ld<dimen-1-v; ld++){
+            matriz[ld][dimen-1-v]=numInit;
+            numInit++;            
+        }        
+        for(int li=dimen-1-v;li>v; li--){
+            matriz[dimen-1-v][li]=numInit;
+            numInit++;            
+        }  
+        for(int liz=dimen-1-v;liz>v; liz--){
+            matriz[liz][v]=numInit;
+            numInit++;            
+        }              
+    }
+    if(dimen%2!=0){
+        matriz[dimen/2][dimen/2]=numInit;
+    }
+
+    return matriz;
+}
+
+
+
 
 public static void main(String[] args) {
    MatricesTransformadas mt=new MatricesTransformadas(); 
-   mt.ia.imprimirMatriz(mt.transformada35(10, 0));
+   mt.ia.imprimirMatriz(mt.transformada29(9, 0));
 }
 
     
